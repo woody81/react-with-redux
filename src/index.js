@@ -1,13 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from './17-redux-songs/components/App'
+// import App from './18-redux-thunk/components/App'
 import {Provider} from 'react-redux'
-import {createStore} from "redux";
-import reducers from './17-redux-songs/reducers'
+import {createStore, applyMiddleware, compose} from "redux";
+import reducers from './18-redux-thunk/reducers'
+import thunk from 'redux-thunk'
+import App from './27-the-context/components/App'
 
-ReactDOM.render(
-    <Provider store={createStore(reducers)}>
-      <App/>
-    </Provider>,
-    document.getElementById("root")
-);
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+// ReactDOM.render(
+//     <Provider
+//         store={createStore(reducers, composeEnhancers(applyMiddleware(thunk)))}>
+//       <App/>
+//     </Provider>,
+//     document.getElementById("root")
+// );
+
+ReactDOM.render(<App/>, document.querySelector('#root'));
